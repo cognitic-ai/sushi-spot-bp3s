@@ -1,16 +1,39 @@
+import Onboarding from "@/components/onboarding";
 import { ThemeProvider } from "@/components/theme-provider";
 import { useCart } from "@/context/cart-context";
+import { useOnboarding } from "@/context/onboarding-context";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { Tabs as WebTabs } from "expo-router/tabs";
 import { NativeTabs } from "expo-router/unstable-native-tabs";
-import { Platform, Text, useWindowDimensions, View } from "react-native";
+import { ActivityIndicator, Platform, Text, useWindowDimensions, View } from "react-native";
+import { systemBackground } from "@bacons/apple-colors";
 
 export default function Layout() {
   return (
     <ThemeProvider>
-      <TabsLayout />
+      <AppContent />
     </ThemeProvider>
   );
+}
+
+function AppContent() {
+  const { hasCompletedOnboarding, completeOnboarding } = useOnboarding();
+
+  // Show loading while checking onboarding state
+  if (hasCompletedOnboarding === null) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: systemBackground }}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
+
+  // Show onboarding if not completed
+  if (!hasCompletedOnboarding) {
+    return <Onboarding onComplete={completeOnboarding} />;
+  }
+
+  return <TabsLayout />;
 }
 
 function TabsLayout() {

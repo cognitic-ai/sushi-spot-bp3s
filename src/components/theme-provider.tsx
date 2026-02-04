@@ -6,12 +6,15 @@ import {
 import { useColorScheme } from "react-native";
 
 import { CartProvider } from "@/context/cart-context";
+import { OnboardingProvider } from "@/context/onboarding-context";
 
 export function ThemeProvider(props: { children: React.ReactNode }) {
   const colorScheme = useColorScheme();
   return (
     <RNTheme value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <CartProvider>{props.children}</CartProvider>
+      <OnboardingProvider>
+        <CartProvider>{props.children}</CartProvider>
+      </OnboardingProvider>
     </RNTheme>
   );
 }
