@@ -1,4 +1,3 @@
-import AC from "@bacons/apple-colors";
 import * as Haptics from "expo-haptics";
 import { SymbolView } from "expo-symbols";
 import { Pressable, Text, View } from "react-native";
@@ -35,7 +34,7 @@ export default function CartItemRow({
       exiting={FadeOut}
       layout={Layout.springify()}
       style={{
-        backgroundColor: AC.secondarySystemGroupedBackground,
+        backgroundColor: "secondarySystemGroupedBackground",
         borderRadius: 12,
         borderCurve: "continuous",
         padding: 12,
@@ -51,13 +50,13 @@ export default function CartItemRow({
           style={{
             fontSize: 16,
             fontWeight: "600",
-            color: AC.label,
+            color: "label",
           }}
           numberOfLines={1}
         >
           {item.name}
         </Text>
-        <Text style={{ fontSize: 13, color: AC.secondaryLabel }}>
+        <Text style={{ fontSize: 13, color: "secondaryLabel" }}>
           ${item.price.toFixed(2)} each
         </Text>
       </View>
@@ -70,15 +69,15 @@ export default function CartItemRow({
             width: 32,
             height: 32,
             borderRadius: 16,
-            backgroundColor: AC.tertiarySystemFill,
+            backgroundColor: "tertiarySystemFill",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
           {process.env.EXPO_OS === "ios" ? (
-            <SymbolView name="minus" size={14} tintColor={AC.label as any} />
+            <SymbolView name="minus" size={14} tintColor="label" />
           ) : (
-            <Text style={{ fontSize: 18, color: AC.label, fontWeight: "600" }}>
+            <Text style={{ fontSize: 18, color: "label", fontWeight: "600" }}>
               -
             </Text>
           )}
@@ -88,7 +87,7 @@ export default function CartItemRow({
           style={{
             fontSize: 17,
             fontWeight: "600",
-            color: AC.label,
+            color: "label",
             minWidth: 24,
             textAlign: "center",
             fontVariant: ["tabular-nums"],
@@ -104,7 +103,7 @@ export default function CartItemRow({
             width: 32,
             height: 32,
             borderRadius: 16,
-            backgroundColor: AC.systemRed,
+            backgroundColor: "systemRed",
             alignItems: "center",
             justifyContent: "center",
           }}
@@ -123,7 +122,7 @@ export default function CartItemRow({
         style={{
           fontSize: 16,
           fontWeight: "700",
-          color: AC.label,
+          color: "label",
           minWidth: 60,
           textAlign: "right",
           fontVariant: ["tabular-nums"],

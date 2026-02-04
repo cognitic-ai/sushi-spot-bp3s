@@ -1,10 +1,9 @@
-import AC from "@bacons/apple-colors";
 import * as Haptics from "expo-haptics";
 import { Link } from "expo-router";
 import { SymbolView } from "expo-symbols";
 import { useState } from "react";
 import { Alert, Pressable, ScrollView, Text, View } from "react-native";
-import Animated, { FadeIn, FadeOut } from "react-native-reanimated";
+import Animated, { FadeIn } from "react-native-reanimated";
 
 import CartItemRow from "@/components/cart-item-row";
 import { useCart } from "@/context/cart-context";
@@ -34,7 +33,7 @@ export default function CartScreen() {
     return (
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={{ flex: 1, backgroundColor: AC.systemGroupedBackground }}
+        style={{ flex: 1, backgroundColor: "systemGroupedBackground" }}
       >
         <Animated.View
           entering={FadeIn}
@@ -52,7 +51,7 @@ export default function CartScreen() {
             style={{
               fontSize: 22,
               fontWeight: "700",
-              color: AC.label,
+              color: "label",
               textAlign: "center",
             }}
           >
@@ -61,7 +60,7 @@ export default function CartScreen() {
           <Text
             style={{
               fontSize: 16,
-              color: AC.secondaryLabel,
+              color: "secondaryLabel",
               textAlign: "center",
               maxWidth: 280,
             }}
@@ -72,7 +71,7 @@ export default function CartScreen() {
             <Pressable
               style={{
                 marginTop: 16,
-                backgroundColor: AC.systemRed,
+                backgroundColor: "systemRed",
                 paddingHorizontal: 24,
                 paddingVertical: 14,
                 borderRadius: 25,
@@ -96,7 +95,7 @@ export default function CartScreen() {
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: AC.systemGroupedBackground }}>
+    <View style={{ flex: 1, backgroundColor: "systemGroupedBackground" }}>
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={{ flex: 1 }}
@@ -118,9 +117,9 @@ export default function CartScreen() {
           bottom: 0,
           left: 0,
           right: 0,
-          backgroundColor: AC.secondarySystemGroupedBackground,
+          backgroundColor: "secondarySystemGroupedBackground",
           borderTopWidth: 0.5,
-          borderTopColor: AC.separator as any,
+          borderTopColor: "separator",
           padding: 16,
           paddingBottom: 34,
           gap: 16,
@@ -133,13 +132,13 @@ export default function CartScreen() {
             alignItems: "center",
           }}
         >
-          <Text style={{ fontSize: 16, color: AC.secondaryLabel }}>
+          <Text style={{ fontSize: 16, color: "secondaryLabel" }}>
             Subtotal
           </Text>
           <Text
             style={{
               fontSize: 16,
-              color: AC.label,
+              color: "label",
               fontVariant: ["tabular-nums"],
             }}
           >
@@ -153,11 +152,11 @@ export default function CartScreen() {
             alignItems: "center",
           }}
         >
-          <Text style={{ fontSize: 16, color: AC.secondaryLabel }}>Tax</Text>
+          <Text style={{ fontSize: 16, color: "secondaryLabel" }}>Tax</Text>
           <Text
             style={{
               fontSize: 16,
-              color: AC.label,
+              color: "label",
               fontVariant: ["tabular-nums"],
             }}
           >
@@ -167,7 +166,7 @@ export default function CartScreen() {
         <View
           style={{
             height: 1,
-            backgroundColor: AC.separator,
+            backgroundColor: "separator",
           }}
         />
         <View
@@ -177,14 +176,14 @@ export default function CartScreen() {
             alignItems: "center",
           }}
         >
-          <Text style={{ fontSize: 20, fontWeight: "700", color: AC.label }}>
+          <Text style={{ fontSize: 20, fontWeight: "700", color: "label" }}>
             Total
           </Text>
           <Text
             style={{
               fontSize: 24,
               fontWeight: "700",
-              color: AC.label,
+              color: "label",
               fontVariant: ["tabular-nums"],
             }}
           >
@@ -196,7 +195,7 @@ export default function CartScreen() {
           onPress={handlePlaceOrder}
           disabled={isOrdering}
           style={({ pressed }) => ({
-            backgroundColor: pressed || isOrdering ? AC.systemOrange : AC.systemRed,
+            backgroundColor: pressed || isOrdering ? "systemOrange" : "systemRed",
             paddingVertical: 16,
             borderRadius: 14,
             borderCurve: "continuous",

@@ -1,4 +1,3 @@
-import AC from "@bacons/apple-colors";
 import { NativeStackNavigationOptions } from "@react-navigation/native-stack";
 import { isLiquidGlassAvailable } from "expo-glass-effect";
 import Stack from "expo-router/stack";
@@ -15,7 +14,7 @@ const AppleStackPreset: NativeStackNavigationOptions =
           backgroundColor: "transparent",
         },
         headerTitleStyle: {
-          color: AC.label as any,
+          color: "label" as any,
         },
         headerBlurEffect: "none",
         headerBackButtonDisplayMode: "minimal",

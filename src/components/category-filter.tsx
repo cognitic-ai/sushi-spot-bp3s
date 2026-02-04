@@ -1,6 +1,5 @@
-import AC from "@bacons/apple-colors";
 import * as Haptics from "expo-haptics";
-import { Pressable, ScrollView, Text, View } from "react-native";
+import { Pressable, ScrollView, Text } from "react-native";
 
 import { categories } from "@/data/sushi";
 
@@ -39,15 +38,15 @@ export default function CategoryFilter({
               borderRadius: 20,
               borderCurve: "continuous",
               backgroundColor: isSelected
-                ? AC.systemRed
-                : AC.tertiarySystemFill,
+                ? "systemRed"
+                : "tertiarySystemFill",
             }}
           >
             <Text
               style={{
                 fontSize: 14,
                 fontWeight: "600",
-                color: isSelected ? "white" : AC.label,
+                color: isSelected ? "white" : "label",
               }}
             >
               {cat.label}
