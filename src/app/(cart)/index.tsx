@@ -1,3 +1,12 @@
+import {
+  systemGroupedBackground,
+  secondarySystemGroupedBackground,
+  label,
+  secondaryLabel,
+  separator,
+  systemRed,
+  systemOrange,
+} from "@bacons/apple-colors";
 import * as Haptics from "expo-haptics";
 import { Link } from "expo-router";
 import { SymbolView } from "expo-symbols";
@@ -33,7 +42,7 @@ export default function CartScreen() {
     return (
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={{ flex: 1, backgroundColor: "systemGroupedBackground" }}
+        style={{ flex: 1, backgroundColor: systemGroupedBackground }}
       >
         <Animated.View
           entering={FadeIn}
@@ -51,7 +60,7 @@ export default function CartScreen() {
             style={{
               fontSize: 22,
               fontWeight: "700",
-              color: "label",
+              color: label,
               textAlign: "center",
             }}
           >
@@ -60,7 +69,7 @@ export default function CartScreen() {
           <Text
             style={{
               fontSize: 16,
-              color: "secondaryLabel",
+              color: secondaryLabel,
               textAlign: "center",
               maxWidth: 280,
             }}
@@ -71,7 +80,7 @@ export default function CartScreen() {
             <Pressable
               style={{
                 marginTop: 16,
-                backgroundColor: "systemRed",
+                backgroundColor: systemRed,
                 paddingHorizontal: 24,
                 paddingVertical: 14,
                 borderRadius: 25,
@@ -95,7 +104,7 @@ export default function CartScreen() {
   }
 
   return (
-    <View style={{ flex: 1, backgroundColor: "systemGroupedBackground" }}>
+    <View style={{ flex: 1, backgroundColor: systemGroupedBackground }}>
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={{ flex: 1 }}
@@ -117,9 +126,9 @@ export default function CartScreen() {
           bottom: 0,
           left: 0,
           right: 0,
-          backgroundColor: "secondarySystemGroupedBackground",
+          backgroundColor: secondarySystemGroupedBackground,
           borderTopWidth: 0.5,
-          borderTopColor: "separator",
+          borderTopColor: separator as string,
           padding: 16,
           paddingBottom: 34,
           gap: 16,
@@ -132,13 +141,13 @@ export default function CartScreen() {
             alignItems: "center",
           }}
         >
-          <Text style={{ fontSize: 16, color: "secondaryLabel" }}>
+          <Text style={{ fontSize: 16, color: secondaryLabel }}>
             Subtotal
           </Text>
           <Text
             style={{
               fontSize: 16,
-              color: "label",
+              color: label,
               fontVariant: ["tabular-nums"],
             }}
           >
@@ -152,11 +161,11 @@ export default function CartScreen() {
             alignItems: "center",
           }}
         >
-          <Text style={{ fontSize: 16, color: "secondaryLabel" }}>Tax</Text>
+          <Text style={{ fontSize: 16, color: secondaryLabel }}>Tax</Text>
           <Text
             style={{
               fontSize: 16,
-              color: "label",
+              color: label,
               fontVariant: ["tabular-nums"],
             }}
           >
@@ -166,7 +175,7 @@ export default function CartScreen() {
         <View
           style={{
             height: 1,
-            backgroundColor: "separator",
+            backgroundColor: separator,
           }}
         />
         <View
@@ -176,14 +185,14 @@ export default function CartScreen() {
             alignItems: "center",
           }}
         >
-          <Text style={{ fontSize: 20, fontWeight: "700", color: "label" }}>
+          <Text style={{ fontSize: 20, fontWeight: "700", color: label }}>
             Total
           </Text>
           <Text
             style={{
               fontSize: 24,
               fontWeight: "700",
-              color: "label",
+              color: label,
               fontVariant: ["tabular-nums"],
             }}
           >
@@ -195,7 +204,7 @@ export default function CartScreen() {
           onPress={handlePlaceOrder}
           disabled={isOrdering}
           style={({ pressed }) => ({
-            backgroundColor: pressed || isOrdering ? "systemOrange" : "systemRed",
+            backgroundColor: pressed || isOrdering ? systemOrange : systemRed,
             paddingVertical: 16,
             borderRadius: 14,
             borderCurve: "continuous",

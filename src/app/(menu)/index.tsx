@@ -1,4 +1,7 @@
-import AC from "@bacons/apple-colors";
+import {
+  systemGroupedBackground,
+  secondaryLabel,
+} from "@bacons/apple-colors";
 import * as Haptics from "expo-haptics";
 import { useState } from "react";
 import { ScrollView, Text, View } from "react-native";
@@ -27,12 +30,12 @@ export default function MenuScreen() {
   return (
     <ScrollView
       contentInsetAdjustmentBehavior="automatic"
-      style={{ flex: 1, backgroundColor: AC.systemGroupedBackground }}
+      style={{ flex: 1, backgroundColor: systemGroupedBackground }}
       contentContainerStyle={{ paddingBottom: 100 }}
     >
       <View style={{ paddingTop: 12, gap: 16 }}>
         <View style={{ paddingHorizontal: 16 }}>
-          <Text style={{ fontSize: 15, color: AC.secondaryLabel }}>
+          <Text style={{ fontSize: 15, color: secondaryLabel }}>
             Fresh sushi made with love
           </Text>
         </View>
@@ -58,7 +61,7 @@ export default function MenuScreen() {
             <Text
               style={{
                 fontSize: 17,
-                color: AC.secondaryLabel,
+                color: secondaryLabel,
                 textAlign: "center",
               }}
             >

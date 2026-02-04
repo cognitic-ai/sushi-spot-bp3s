@@ -1,3 +1,11 @@
+import {
+  secondarySystemGroupedBackground,
+  label,
+  secondaryLabel,
+  tertiaryLabel,
+  systemRed,
+  systemOrange,
+} from "@bacons/apple-colors";
 import * as Haptics from "expo-haptics";
 import { SymbolView } from "expo-symbols";
 import { Pressable, Text, View } from "react-native";
@@ -42,7 +50,7 @@ export default function SushiCard({ item, onAddToCart }: SushiCardProps) {
         onPressIn={handlePressIn}
         onPressOut={handlePressOut}
         style={{
-          backgroundColor: "secondarySystemGroupedBackground",
+          backgroundColor: secondarySystemGroupedBackground,
           borderRadius: 16,
           borderCurve: "continuous",
           overflow: "hidden",
@@ -65,7 +73,7 @@ export default function SushiCard({ item, onAddToCart }: SushiCardProps) {
                     style={{
                       fontSize: 17,
                       fontWeight: "600",
-                      color: "label",
+                      color: label,
                     }}
                     numberOfLines={1}
                   >
@@ -74,7 +82,7 @@ export default function SushiCard({ item, onAddToCart }: SushiCardProps) {
                   <Text
                     style={{
                       fontSize: 13,
-                      color: "secondaryLabel",
+                      color: secondaryLabel,
                       marginTop: 2,
                     }}
                   >
@@ -85,7 +93,7 @@ export default function SushiCard({ item, onAddToCart }: SushiCardProps) {
               <Text
                 style={{
                   fontSize: 14,
-                  color: "secondaryLabel",
+                  color: secondaryLabel,
                   marginTop: 4,
                 }}
                 numberOfLines={2}
@@ -107,7 +115,7 @@ export default function SushiCard({ item, onAddToCart }: SushiCardProps) {
                 style={{
                   fontSize: 20,
                   fontWeight: "700",
-                  color: "label",
+                  color: label,
                 }}
               >
                 ${item.price.toFixed(2)}
@@ -115,7 +123,7 @@ export default function SushiCard({ item, onAddToCart }: SushiCardProps) {
               <Text
                 style={{
                   fontSize: 12,
-                  color: "tertiaryLabel",
+                  color: tertiaryLabel,
                 }}
               >
                 {item.pieces} pieces
@@ -125,7 +133,7 @@ export default function SushiCard({ item, onAddToCart }: SushiCardProps) {
             <Pressable
               onPress={handleAddToCart}
               style={({ pressed }) => ({
-                backgroundColor: pressed ? "systemOrange" : "systemRed",
+                backgroundColor: pressed ? systemOrange : systemRed,
                 paddingHorizontal: 16,
                 paddingVertical: 10,
                 borderRadius: 20,

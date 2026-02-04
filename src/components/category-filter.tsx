@@ -1,3 +1,8 @@
+import {
+  systemRed,
+  tertiarySystemFill,
+  label,
+} from "@bacons/apple-colors";
 import * as Haptics from "expo-haptics";
 import { Pressable, ScrollView, Text } from "react-native";
 
@@ -37,16 +42,14 @@ export default function CategoryFilter({
               paddingVertical: 8,
               borderRadius: 20,
               borderCurve: "continuous",
-              backgroundColor: isSelected
-                ? "systemRed"
-                : "tertiarySystemFill",
+              backgroundColor: isSelected ? systemRed : tertiarySystemFill,
             }}
           >
             <Text
               style={{
                 fontSize: 14,
                 fontWeight: "600",
-                color: isSelected ? "white" : "label",
+                color: isSelected ? "white" : label,
               }}
             >
               {cat.label}
